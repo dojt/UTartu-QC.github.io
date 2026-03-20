@@ -45,6 +45,7 @@ Instructions for publishing:
 - Tue 10-12: Delta room 2045
 - Slides & hw assignments: [[https://drive.proton.me/urls/7Z52BCKW08#SaGIwCP4KpoS][Proton cloud folder]]
 
+
 * Team
 *** Shahla Novruzova (PhD student)
 Quantum error correction
