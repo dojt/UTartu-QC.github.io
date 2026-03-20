@@ -27,6 +27,12 @@
 #+END_COMMENT
 :END:
 
+#+BEGIN_COMMENT
+Instructions for publishing:
+1. eval =publish.el= buffer with =M-x= ~eval-buffer~
+2. =M-x= ~org-publish~
+#+END_COMMENT
+
 * Current Info for Students
 
 **** Quantum Seminar
@@ -67,7 +73,7 @@ Quantum information & quantum physics
 
 Group leader
 - PI of projects: [[NeQst]], [[OSQ+100]], [[TK202U7]]
-- [[https://kvantarvutid.ee/][Homepage/blog]]
+- [[https://kvantarvutid.ee/][Blog/homepage]]
 - [[https://linkedin.com/in/dirk-oliver-theis-178b8488][LinkedIn]]
 
 
