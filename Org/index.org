@@ -27,6 +27,12 @@
 #+END_COMMENT
 :END:
 
+#+BEGIN_COMMENT
+Instructions for publishing:
+1. eval =publish.el= buffer with =M-x= ~eval-buffer~
+2. =M-x= ~org-publish~
+#+END_COMMENT
+
 * Current Info for Students
 
 **** Quantum Seminar
@@ -39,12 +45,21 @@
 - Tue 10-12: Delta room 2045
 - Slides & hw assignments: [[https://drive.proton.me/urls/7Z52BCKW08#SaGIwCP4KpoS][Proton cloud folder]]
 
+
 * Team
+*** Mattias Märka (PhD student)
+Quantum simulations for chemistry and material science
+- Email: First name dot last name at "UT" dot "ee"
+
+Supervisors: [[#VeikoPalge][Veiko Palge]], Juhan Matthias Kahk, [[#DOTheis][Theis]]
+
 *** Shahla Novruzova (PhD student)
 Quantum error correction
 - Projects: [[OSQ+100]], [[TK202U7]]
 - Email: First name dot last name at "UT" dot "ee"
 - [[https://linkedin.com/in/shahla-novruzova-513385190][LinkedIn]]
+
+Supervisors: [[#DOTheis][Theis]], [[#VeikoPalge][Palge]]
 
 *** Evgenii Dolzhkov (PhD student)
 Quantum algorithms for combinatorial optimization
@@ -67,7 +82,7 @@ Quantum information & quantum physics
 
 Group leader
 - PI of projects: [[NeQst]], [[OSQ+100]], [[TK202U7]]
-- [[https://kvantarvutid.ee/][Homepage/blog]]
+- [[https://kvantarvutid.ee/][Blog/homepage]]
 - [[https://linkedin.com/in/dirk-oliver-theis-178b8488][LinkedIn]]
 
 
@@ -89,12 +104,12 @@ Group leader
 *** LTAT.04.021 Introduction to Quantum Information ("IQI")
 - Lecture course
 - Spring term
-- Instructor: Theis
+- Instructor: [[#DOTheis][Theis]]
 
 *** LTFY.03.013 Fundamentals of Quantum Computing ("FunQ")
 - Lecture course
 - Fall term
-- Instructor: Palge
+- Instructor: [[#VeikoPalge][Palge]]
 
 *** LTAT.04.004 Quantum Seminar
 - Meets every Wednesday, semester or not.
