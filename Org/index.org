@@ -49,19 +49,19 @@ Instructions for publishing:
 * Team
 *** PhD Students
 **** Mattias Märka
-Quantum simulations for chemistry and material science
+- Topic: Quantum simulations for chemistry and material science
 - Email: First name dot last name at "UT" dot "ee"
 - Supervisors: [[#VeikoPalge][Veiko Palge]], Juhan Matthias Kahk, [[#DOTheis][Theis]]
 
 **** Shahla Novruzova
-Quantum error correction
+- Area: Quantum error correction
 - Projects: [[OSQ+100]], [[TK202U7]]
 - Email: First name dot last name at "UT" dot "ee"
 - [[https://linkedin.com/in/shahla-novruzova-513385190][LinkedIn]]
 - Supervisors: [[#DOTheis][Theis]], [[#VeikoPalge][Palge]]
 
 **** Evgenii Dolzhkov
-Quantum algorithms for combinatorial optimization
+- Area: Quantum algorithms for combinatorial optimization
 - Projects: [[NeQst]]
 - Email: First name dot last name at "UT" dot "ee"
 
@@ -71,7 +71,7 @@ Quantum algorithms for combinatorial optimization
 :CUSTOM_ID: VeikoPalge
 :END:
 
-Quantum information & quantum physics
+- Area: Quantum information & quantum physics
 - Projects: [[OSQ+100]]
 - Email: First name dot last name at "UT" dot "ee"
 
@@ -80,7 +80,7 @@ Quantum information & quantum physics
 :CUSTOM_ID: DOTheis
 :END:
 
-Group leader
+- Group leader
 - PI of projects: [[NeQst]], [[OSQ+100]], [[TK202U7]]
 - [[https://kvantarvutid.ee/][Blog/homepage]]
 - [[https://linkedin.com/in/dirk-oliver-theis-178b8488][LinkedIn]]
