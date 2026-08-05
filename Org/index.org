@@ -33,40 +33,40 @@ Instructions for publishing:
 2. =M-x= ~org-publish~
 #+END_COMMENT
 
-* Current Info for Students
-
+* Current Info
 **** Quantum Seminar
-- Wed 14-16 for quantum Yodas
-- Wed 16-18 for quantum Skywalkers
+- Wed 14–18
 - Delta room 3081
+- For the team & motivated BSc & MSc students, after the summer break, meetings resume on /July 29/.
+- Semester seminar activity begins on /September 2/ (half of the time slot).
 
-**** IQI
-- Mon 16-18: Delta room 2010
-- Tue 10-12: Delta room 2045
-- Slides & hw assignments: [[https://drive.proton.me/urls/7Z52BCKW08#SaGIwCP4KpoS][Proton cloud folder]]
+**** FunQ
+- [[#T:FunQ][FunQ]] 🤘 is taking place in the upcoming semester.
+- Classes in =Ostwaldi 1=.
+- Stay tuned for details.
 
 
 * Team
-*** Mattias Märka (PhD student)
+*** PhD Students
+**** Mattias Märka
 Quantum simulations for chemistry and material science
 - Email: First name dot last name at "UT" dot "ee"
+- Supervisors: [[#VeikoPalge][Veiko Palge]], Juhan Matthias Kahk, [[#DOTheis][Theis]]
 
-Supervisors: [[#VeikoPalge][Veiko Palge]], Juhan Matthias Kahk, [[#DOTheis][Theis]]
-
-*** Shahla Novruzova (PhD student)
+**** Shahla Novruzova
 Quantum error correction
 - Projects: [[OSQ+100]], [[TK202U7]]
 - Email: First name dot last name at "UT" dot "ee"
 - [[https://linkedin.com/in/shahla-novruzova-513385190][LinkedIn]]
+- Supervisors: [[#DOTheis][Theis]], [[#VeikoPalge][Palge]]
 
-Supervisors: [[#DOTheis][Theis]], [[#VeikoPalge][Palge]]
-
-*** Evgenii Dolzhkov (PhD student)
+**** Evgenii Dolzhkov
 Quantum algorithms for combinatorial optimization
 - Projects: [[NeQst]]
 - Email: First name dot last name at "UT" dot "ee"
 
-*** Dr. Veiko Palge (Researcher)
+*** Faculty
+**** Dr. Veiko Palge (Researcher)
 :PROPERTIES:
 :CUSTOM_ID: VeikoPalge
 :END:
@@ -75,7 +75,7 @@ Quantum information & quantum physics
 - Projects: [[OSQ+100]]
 - Email: First name dot last name at "UT" dot "ee"
 
-*** Dr. Dirk Oliver Theis (Assoc. Prof.)
+**** Dr. Dirk Oliver Theis (Assoc. Prof.)
 :PROPERTIES:
 :CUSTOM_ID: DOTheis
 :END:
@@ -102,13 +102,20 @@ Group leader
 
 * Teaching
 *** LTAT.04.021 Introduction to Quantum Information ("IQI")
-- Lecture course
+:PROPERTIES:
+:CUSTOM_ID: T:IQI
+:END:
 - Spring term
+- /IQI/ introduces the quantum information concepts (qubits etc) with minimal math — but fully rigorous.
 - Instructor: [[#DOTheis][Theis]]
 
 *** LTFY.03.013 Fundamentals of Quantum Computing ("FunQ")
-- Lecture course
+:PROPERTIES:
+:CUSTOM_ID: T:FunQ
+:END:
+
 - Fall term
+- /FunQ/ is a 1st year introduction based on complex numbers & matrices, quantum circuits, and Python.
 - Instructor: [[#VeikoPalge][Palge]]
 
 *** LTAT.04.004 Quantum Seminar
