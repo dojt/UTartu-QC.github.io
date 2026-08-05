@@ -47,11 +47,19 @@ Instructions for publishing:
 
 
 * Team
+*** Mattias Märka (PhD student)
+Quantum simulations for chemistry and material science
+- Email: First name dot last name at "UT" dot "ee"
+
+Supervisors: [[#VeikoPalge][Veiko Palge]], Juhan Matthias Kahk, [[#DOTheis][Theis]]
+
 *** Shahla Novruzova (PhD student)
 Quantum error correction
 - Projects: [[OSQ+100]], [[TK202U7]]
 - Email: First name dot last name at "UT" dot "ee"
 - [[https://linkedin.com/in/shahla-novruzova-513385190][LinkedIn]]
+
+Supervisors: [[#DOTheis][Theis]], [[#VeikoPalge][Palge]]
 
 *** Evgenii Dolzhkov (PhD student)
 Quantum algorithms for combinatorial optimization
@@ -96,12 +104,12 @@ Group leader
 *** LTAT.04.021 Introduction to Quantum Information ("IQI")
 - Lecture course
 - Spring term
-- Instructor: Theis
+- Instructor: [[#DOTheis][Theis]]
 
 *** LTFY.03.013 Fundamentals of Quantum Computing ("FunQ")
 - Lecture course
 - Fall term
-- Instructor: Palge
+- Instructor: [[#VeikoPalge][Palge]]
 
 *** LTAT.04.004 Quantum Seminar
 - Meets every Wednesday, semester or not.
