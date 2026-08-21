@@ -57,6 +57,7 @@ Instructions for publishing:
 - Area: Quantum error correction
 - Projects: [[OSQ+100]], [[TK202U7]]
 - Email: First name dot last name at "UT" dot "ee"
+- [[./homepages/shahla-novruzova][Hompeage]]
 - [[https://linkedin.com/in/shahla-novruzova-513385190][LinkedIn]]
 - Supervisors: [[#DOTheis][Theis]], [[#VeikoPalge][Palge]]
 
@@ -64,6 +65,7 @@ Instructions for publishing:
 - Area: Quantum algorithms for combinatorial optimization
 - Projects: [[NeQst]]
 - Email: First name dot last name at "UT" dot "ee"
+- Supervisor: [[#DOTheis][Theis]]
 
 *** Faculty
 **** Dr. Veiko Palge (Researcher)
