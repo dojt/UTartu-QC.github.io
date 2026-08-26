@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shahla Novruzova — doctoral researcher and quantum software developer working on fault-tolerant quantum computing and quantum error correction at the University of Tartu.">
+  <meta name="theme-color" content="#201d50">
+  <title>Shahla Novruzova | Quantum Error Correction</title>
+  <style>
+    :root {
+      --ink: #18213a;
+      --muted: #5d6678;
+      --indigo: #201d50;
+      --blue: #355bb8;
+      --teal: #0d9488;
+      --rose: #d94c6b;
+      --paper: #ffffff;
+      --wash: #f5f7fb;
+      --line: #dfe4ed;
+      --teal-wash: #eaf7f4;
+      --rose-wash: #fff0f3;
+      --shadow: 0 20px 55px rgba(32, 29, 80, 0.11);
+      --radius: 22px;
+      --shell: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .shell { width: min(calc(100% - 40px), var(--shell)); margin-inline: auto; }
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      color: white;
+      background: var(--indigo);
+      border-radius: 8px;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    header {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid rgba(223, 228, 237, 0.9);
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(14px);
+    }
+    .header-inner {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
+    .identity-mark {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      color: white;
+      background: var(--indigo);
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+    }
+    .identity strong, .identity small { display: block; line-height: 1.2; }
+    .identity small { margin-top: 4px; color: var(--muted); font-size: 0.76rem; }
+    nav { display: flex; gap: 25px; }
+    nav a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    nav a:hover, nav a:focus-visible { color: var(--teal); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 58px 0 52px;
+      background:
+        radial-gradient(circle at 86% 7%, rgba(13, 148, 136, 0.16), transparent 29%),
+        radial-gradient(circle at 4% 92%, rgba(217, 76, 107, 0.10), transparent 27%),
+        linear-gradient(180deg, #fbfcff 0%, #f5f7fb 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(230px, 0.55fr);
+      align-items: center;
+      gap: 52px;
+    }
+    .eyebrow {
+      margin: 0 0 13px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { margin-top: 0; color: var(--indigo); font-family: Georgia, "Times New Roman", serif; line-height: 1.12; }
+    h1 {
+      margin-bottom: 13px;
+      font-size: clamp(3rem, 6.3vw, 5.25rem);
+      letter-spacing: -0.06em;
+    }
+    h2 { margin-bottom: 17px; font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -0.04em; }
+    h3 { margin-bottom: 10px; font-size: 1.4rem; }
+    p { text-wrap: pretty; }
+    .role {
+      margin: 0 0 16px;
+      color: var(--rose);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      font-style: italic;
+    }
+    .lead { max-width: 710px; margin: 0; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 29px; }
+    .button {
+      display: inline-flex;
+      min-height: 47px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 19px;
+      border: 2px solid var(--indigo);
+      border-radius: 999px;
+      font-size: 0.91rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    .button:hover, .button:focus-visible { transform: translateY(-2px); }
+    .button.primary { color: white; background: var(--indigo); box-shadow: 0 9px 20px rgba(32, 29, 80, 0.17); }
+    .button.secondary { color: var(--indigo); background: white; }
+
+    .portrait-card {
+      width: min(100%, 300px);
+      justify-self: end;
+      padding: 16px;
+      border: 1px solid rgba(13, 148, 136, 0.22);
+      background: white;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      transform: rotate(1.3deg);
+    }
+    .portrait {
+      position: relative;
+      display: grid;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      place-items: center;
+      background: linear-gradient(145deg, var(--teal-wash), #edf1fb);
+      border-radius: 21px;
+    }
+    .portrait-monogram {
+      color: var(--teal);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 700;
+      letter-spacing: -0.08em;
+    }
+    .portrait img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .portrait-note { margin: 13px 4px 1px; color: var(--muted); font-size: 0.78rem; text-align: center; }
+
+    .quick-links { color: white; background: var(--indigo); }
+    .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .quick-grid a {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 19px 24px;
+      text-decoration: none;
+    }
+    .quick-grid a + a { border-left: 1px solid rgba(255, 255, 255, 0.16); }
+    .quick-grid strong, .quick-grid small { display: block; }
+    .quick-grid strong { font-size: 0.9rem; }
+    .quick-grid small { margin-top: 2px; color: rgba(255, 255, 255, 0.62); font-size: 0.73rem; }
+    .quick-grid .arrow { color: #68d8cc; font-size: 1.2rem; }
+
+    .section { padding: 58px 0; scroll-margin-top: 68px; }
+    .section.tint { background: var(--wash); }
+    .section-heading { max-width: 760px; margin-bottom: 27px; }
+    .section-heading > p:last-child { margin: 0; color: var(--muted); font-size: 1.04rem; }
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.65fr); gap: 48px; }
+    .about-copy p { margin: 0 0 18px; color: var(--muted); }
+    .about-copy p:first-child { color: var(--ink); font-size: 1.12rem; }
+    .detail-list { border-top: 1px solid var(--line); }
+    .detail-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .detail-row dt { color: var(--muted); font-size: 0.79rem; font-weight: 800; text-transform: uppercase; }
+    .detail-row dd { margin: 0; font-size: 0.93rem; }
+
+    .education-heading { margin: 36px 0 17px; }
+    .education-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .education-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 17px;
+    }
+    .education-card time {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .education-card h3 { margin-bottom: 8px; font-size: 1.23rem; }
+    .education-card p { margin: 0; color: var(--muted); font-size: 0.91rem; }
+    .education-card a { color: var(--teal); font-weight: 700; text-underline-offset: 3px; }
+
+    .focus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .focus-card {
+      position: relative;
+      min-height: 154px;
+      padding: 23px 22px 21px 70px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 18px;
+    }
+    .focus-card p { margin: 0; color: var(--muted); }
+    .number {
+      position: absolute;
+      top: 23px;
+      left: 22px;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      color: var(--teal);
+      background: var(--teal-wash);
+      border-radius: 11px;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+    .focus-card:nth-child(even) .number { color: var(--rose); background: var(--rose-wash); }
+
+    .work-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.55fr);
+      gap: 36px;
+      padding: 29px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 34px rgba(32, 29, 80, 0.07);
+    }
+    .status {
+      display: inline-flex;
+      margin-bottom: 15px;
+      padding: 5px 10px;
+      color: var(--rose);
+      background: var(--rose-wash);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .work-card p { color: var(--muted); }
+    .work-card .authors { color: var(--ink); font-weight: 700; }
+    .work-card aside {
+      padding: 24px;
+      color: white;
+      background: var(--indigo);
+      border-radius: 17px;
+    }
+    .work-card aside strong { display: block; margin-bottom: 13px; color: #68d8cc; font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; }
+    .work-card aside p { margin: 0 0 18px; color: rgba(255, 255, 255, 0.72); font-size: 0.88rem; }
+    .text-link { color: var(--teal); font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .work-card aside .text-link { color: white; }
+
+    .manuscripts {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      margin-top: 16px;
+      padding: 21px 25px;
+      border: 1px dashed rgba(13, 148, 136, 0.45);
+      background: var(--teal-wash);
+      border-radius: 17px;
+    }
+    .manuscripts h3, .manuscripts p { margin: 0; }
+    .manuscripts p { color: var(--muted); }
+    .manuscripts span { flex: 0 0 auto; color: var(--teal); font-weight: 850; }
+
+    .contact-front { padding: 28px 0; background: var(--wash); border-bottom: 1px solid var(--line); scroll-margin-top: 68px; }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(430px, 1.28fr); align-items: center; gap: 48px; }
+    .contact-front .eyebrow { margin-bottom: 6px; }
+    .contact-front h2 { margin-bottom: 8px; font-size: clamp(1.55rem, 2.6vw, 2.15rem); }
+    .contact-front .contact-copy p { margin: 0 0 14px; font-size: 0.91rem; }
+    .contact-front .button { min-height: 42px; padding: 8px 16px; font-size: 0.84rem; }
+    .contact-front .link-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 0; gap: 0 22px; }
+    .contact-front .link-list a { padding: 12px 2px; }
+    .contact-copy p { color: var(--muted); }
+    .link-list { border-top: 1px solid var(--line); }
+    .link-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 17px 4px;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .link-list strong, .link-list small { display: block; }
+    .link-list strong { color: var(--indigo); }
+    .link-list small { margin-top: 2px; color: var(--muted); }
+    .link-list .arrow { color: var(--teal); font-size: 1.25rem; }
+
+    footer { padding: 31px 0; color: rgba(255, 255, 255, 0.68); background: var(--indigo); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    footer p { margin: 0; font-size: 0.84rem; }
+    footer strong, footer a { color: white; }
+    :focus-visible { outline: 3px solid #f4a2b5; outline-offset: 4px; }
+
+    @media (max-width: 880px) {
+      .hero-grid, .about-grid, .work-card, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 45px; }
+      .portrait-card { max-width: 300px; justify-self: start; }
+      .quick-grid { grid-template-columns: repeat(2, 1fr); }
+      .education-grid { grid-template-columns: 1fr; }
+      .quick-grid a:nth-child(3) { border-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.16); }
+      .quick-grid a:nth-child(4) { border-top: 1px solid rgba(255, 255, 255, 0.16); }
+    }
+
+    @media (max-width: 650px) {
+      body { font-size: 16px; }
+      .shell { width: min(calc(100% - 28px), var(--shell)); }
+      .header-inner { min-height: 64px; }
+      .identity small, nav { display: none; }
+      .hero { padding: 48px 0 44px; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.4rem); }
+      .section { padding: 48px 0; }
+      .quick-grid, .focus-grid { grid-template-columns: 1fr; }
+      .quick-grid a + a { border-top: 1px solid rgba(255, 255, 255, 0.16); border-left: 0; }
+      .focus-card { padding: 75px 23px 24px; }
+      .number { top: 23px; left: 23px; }
+      .work-card { gap: 25px; padding: 25px; }
+      .manuscripts { align-items: flex-start; flex-direction: column; padding: 24px; }
+      .contact-front { padding: 24px 0; }
+      .contact-front .link-list { grid-template-columns: 1fr; }
+      .detail-row { grid-template-columns: 86px 1fr; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="shell header-inner">
+      <a class="identity" href="#top" aria-label="Shahla Novruzova — top of page">
+        <span class="identity-mark" aria-hidden="true">SN</span>
+        <span><strong>Shahla Novruzova</strong><small>Quantum error correction · University of Tartu</small></span>
+      </a>
+      <nav aria-label="Page navigation">
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#work">Work</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Fault-tolerant quantum computing</p>
+          <h1>Shahla<br>Novruzova</h1>
+          <p class="role">Doctoral researcher &amp; quantum software developer</p>
+          <p class="lead">
+            I study how quantum error-correcting codes can be designed around
+            real hardware—turning physical noise, loss, and architectural
+            constraints into reliable quantum computation.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#work">Explore my work</a>
+            <a class="button secondary" href="mailto:shahla.novruzova@ut.ee">Get in touch</a>
+          </div>
+        </div>
+
+        <figure class="portrait-card">
+          <div class="portrait">
+            <span class="portrait-monogram" aria-hidden="true">SN</span>
+            <img src="shahla/profile.jpg" alt="Portrait of Shahla Novruzova" onerror="this.style.display='none'">
+          </div>
+          <figcaption class="portrait-note">University of Tartu · Institute of Computer Science</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="contact-front" id="contact">
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s connect</h2>
+          <p>Quantum error correction, fault-tolerant architectures, and quantum-software development.</p>
+          <a class="button primary" href="mailto:shahla.novruzova@ut.ee">shahla.novruzova@ut.ee</a>
+        </div>
+
+        <div class="link-list">
+          <a href="https://quantum-computing.ut.ee/" target="_blank" rel="noopener"><span><strong>Quantum Computing Group</strong><small>University of Tartu</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://www.etis.ee/CV/Shahla_Novruzova/eng/" target="_blank" rel="noopener"><span><strong>ETIS profile</strong><small>Research information</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://orcid.org/0009-0002-0744-8484" target="_blank" rel="noopener"><span><strong>ORCID</strong><small>0009-0002-0744-8484</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/shahla-novruzova-513385190/" target="_blank" rel="noopener"><span><strong>LinkedIn</strong><small>Professional profile</small></span><span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">About me</p>
+          <h2>Building reliability into quantum systems</h2>
+          <p>
+            I am a doctoral researcher and quantum software developer at the
+            University of Tartu. My research focuses on fault-tolerant quantum
+            computing, particularly quantum error correction with surface-code
+            families.
+          </p>
+          <p>
+            I began my research career by studying models of confined quantum
+            wells, which gave me a foundation in quantum mechanics and
+            computational methods. I later shifted my focus to quantum
+            computing, with an emphasis on quantum error correction and quantum
+            circuit simulation.
+          </p>
+          <p>
+            Today, I use numerical simulation and decoding tools to study how
+            quantum memories behave under realistic physical noise. I am
+            especially interested in hardware-aware code design, lattice
+            surgery, spin-photonic architectures, and efficient fault-tolerant
+            operations.
+          </p>
+        </div>
+
+        <dl class="detail-list">
+          <div class="detail-row"><dt>Position</dt><dd>Doctoral Researcher and Quantum Software Developer</dd></div>
+          <div class="detail-row"><dt>Institute</dt><dd>Institute of Computer Science, University of Tartu</dd></div>
+          <div class="detail-row"><dt>Area</dt><dd>Quantum error correction</dd></div>
+          <div class="detail-row"><dt>Projects</dt><dd>OpenSuperQ+ 100 and TK202U7</dd></div>
+          <div class="detail-row"><dt>Location</dt><dd>Tartu, Estonia</dd></div>
+        </dl>
+      </div>
+
+      <div class="education-heading">
+        <p class="eyebrow">Education &amp; experience</p>
+        <h2>From theoretical physics to quantum computing</h2>
+      </div>
+      <div class="education-grid">
+        <article class="education-card">
+          <time>2012–2017</time>
+          <h3>Bachelor’s degree in Physics Education</h3>
+          <p><a href="https://beu.edu.az/en" target="_blank" rel="noopener">Baku Engineering University</a></p>
+        </article>
+        <article class="education-card">
+          <time>2018–2020</time>
+          <h3>Master’s degree in Theoretical and High Energy Physics</h3>
+          <p><a href="http://www.physics.gov.az/index_en.html" target="_blank" rel="noopener">Institute of Physics</a>, Azerbaijan National Academy of Sciences</p>
+        </article>
+        <article class="education-card">
+          <time>Since September 2023</time>
+          <h3>Quantum Software Developer</h3>
+          <p><a href="https://www.ut.ee/en" target="_blank" rel="noopener">University of Tartu</a>, Estonia</p>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section class="section tint" id="research">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Research interests</p>
+          <h2>Codes, noise, and the hardware between them</h2>
+          <p>My work connects abstract fault-tolerance ideas with the physical mechanisms that determine whether they succeed.</p>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-card"><span class="number">01</span><h3>Quantum error correction</h3><p>Surface codes, XZZX variants, logical memories, and decoding under structured physical noise.</p></article>
+          <article class="focus-card"><span class="number">02</span><h3>Fault-tolerant architectures</h3><p>Native gate sets, compilation schedules, and code–hardware co-design for scalable quantum computation.</p></article>
+          <article class="focus-card"><span class="number">03</span><h3>Spin-photonic systems</h3><p>Heralded photon loss, repeat-until-success entanglement, and loss-aware error models.</p></article>
+          <article class="focus-card"><span class="number">04</span><h3>Lattice surgery</h3><p>Resource-efficient logical operations and simulation methods for reliable quantum computation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Current work</p>
+          <h2>Research in progress</h2>
+          <p>My current projects study how hardware-level erasure mechanisms affect the logical performance of quantum error-correcting codes.</p>
+        </div>
+
+        <article class="work-card">
+          <div>
+            <span class="status">Manuscript in preparation</span>
+            <h3>XZZX surface codes under heralded photon loss in spin-photonic architectures</h3>
+            <p class="authors">Shahla Novruzova and Dirk Oliver Theis</p>
+            <p>
+              A hardware-aware comparison of the XZZX and standard surface-code
+              frames when repeat-until-success photon loss is decoded as a
+              heralded phase-erasure process.
+            </p>
+          </div>
+          <aside>
+            <strong>Reproducible simulations</strong>
+            <p>Stim, PyMatching 2, NumPy, SciPy, and Matplotlib.</p>
+            <a class="text-link" href="https://codeberg.org/ShahlaNovruz/xzzx-spoqc-threshold" target="_blank" rel="noopener">View the Codeberg repository ↗</a>
+          </aside>
+        </article>
+
+        <div class="manuscripts">
+          <div><h3>Preprints and publications</h3><p>My current manuscripts are in preparation. arXiv links will be added here when they become public.</p></div>
+          <span>Coming soon</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p><strong>Shahla Novruzova</strong><br>Institute of Computer Science, University of Tartu</p>
+      <p>Fault-tolerant quantum computing · Quantum error correction</p>
+    </div>
+  </footer>
+</body>
+</html>
