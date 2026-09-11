@@ -82,7 +82,7 @@
 :END:
 
 - Group leader
-- PI of projects: [[OSQ+100]], [[TK202U7]], [[TemTA-242]], 
+- PI of projects: [[OSQ+100]], [[TK202U7]], [[TemTA-242]], [[EQA]]
 - [[https://kvantarvutid.ee/][Blog/homepage]]
 - [[https://linkedin.com/in/dirk-oliver-theis-178b8488][LinkedIn]]
 
