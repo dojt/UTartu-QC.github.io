@@ -105,7 +105,8 @@
   We are the tiny foothold of the European Quantum Academy *in¹* Estonia. \\
   @@html:<small>@@ /¹) Meaning we are actually physically (pun) located in Estonia, not merely registered here./ @@html:</small>@@
 - [[https://qt.eu/news/2026/2026-05-06_The_Quantum_Academy_launches_to_train_Europes_next-generation_of_talent][Press release on QT.eu]]
-- ETIS Link will follow soon, I guess.
+- ETIS link will follow soon, I guess.
+
 
 * Teaching
 *** LTAT.04.021 Introduction to Quantum Information ("IQI")
