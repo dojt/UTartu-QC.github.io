@@ -28,22 +28,21 @@
 :END:
 
 #+BEGIN_COMMENT
-Instructions for publishing:
-1. eval =publish.el= buffer with =M-x= ~eval-buffer~
-2. =M-x= ~org-publish~
+,Instructions for publishing:
+,1. eval =publish.el= buffer with =M-x= ~eval-buffer~
+,2. =M-x= ~org-publish~
 #+END_COMMENT
 
 * Current Info
 **** Quantum Seminar
+- Delta room 3087
 - Wed 14–18
-- Delta room 3081
-- For the team & motivated BSc & MSc students, after the summer break, meetings resume on /July 29/.
-- Semester seminar activity begins on /September 2/ (half of the time slot).
+- 14-16 is LTAT.04.004
+- 16-18 is for the team and particularly motivated BSc & MSc students.
 
 **** FunQ
-- [[#T:FunQ][FunQ]] 🤘 is taking place in the upcoming semester.
+- [[#T:FunQ][FunQ]] 🤘 — /Fundamentals of Quantum Computing/
 - Classes in =Ostwaldi 1=.
-- Stay tuned for details.
 
 
 * Team
@@ -55,7 +54,7 @@ Instructions for publishing:
 
 **** Shahla Novruzova
 - Area: Quantum error correction
-- Projects: [[OSQ+100]], [[TK202U7]]
+- Projects: [[TemTa-242]]
 - Email: First name dot last name at "UT" dot "ee"
 - [[./homepages/shahla.html][Hompeage]]
 - [[https://linkedin.com/in/shahla-novruzova-513385190][LinkedIn]]
@@ -63,7 +62,7 @@ Instructions for publishing:
 
 **** Evgenii Dolzhkov
 - Area: Quantum algorithms for combinatorial optimization
-- Projects: [[NeQst]]
+- Projects: NeQst
 - Email: First name dot last name at "UT" dot "ee"
 - Supervisor: [[#DOTheis][Theis]]
 
@@ -74,7 +73,7 @@ Instructions for publishing:
 :END:
 
 - Area: Quantum information & quantum physics
-- Projects: [[OSQ+100]]
+- Projects: [[OSQ+100]], [[TemTA-242]]
 - Email: First name dot last name at "UT" dot "ee"
 
 **** Dr. Dirk Oliver Theis (Assoc. Prof.)
@@ -83,7 +82,7 @@ Instructions for publishing:
 :END:
 
 - Group leader
-- PI of projects: [[NeQst]], [[OSQ+100]], [[TK202U7]]
+- PI of projects: [[OSQ+100]], [[TK202U7]], [[TemTA-242]], 
 - [[https://kvantarvutid.ee/][Blog/homepage]]
 - [[https://linkedin.com/in/dirk-oliver-theis-178b8488][LinkedIn]]
 
@@ -93,14 +92,20 @@ Instructions for publishing:
 - /Open Superconducting Quantum Computers/  (Horizon Europe)
 - [[https://www.etis.ee/Portal/Projects/Display/521659e7-fbe6-43b4-97b6-ef8111700c8e][ETIS data sheet]]
 
-*** NeQst
-- Quantum Computing Applied to Industrial Optimization Problems (Research Council of Norway)
-- [[https://www.etis.ee/Portal/Projects/Display/00a35da9-08ad-46ec-ba26-800d62f16a28][ETIS data sheet]]
-
 *** TK202U7
-- Work group # 7 /Quantum Information and Computing/ of the center of excellence [[https://kbfi.ee/en/high-energy-and-computational-physics/centre-of-excellence-foundations-of-the-universe/][Foundatios of the Universe]]
+- Work group # 7 /Quantum Information and Computing/ of the center of excellence [[https://kbfi.ee/en/high-energy-and-computational-physics/centre-of-excellence-foundations-of-the-universe/][Foundations of the Universe]]
 - [[https://www.etis.ee/Portal/Projects/Display/18986bb0-3f92-4690-b4bf-3120a713f2fd][ETIS data sheet]]
 
+*** TemTA-242
+- RISC-V for Fault-Tolerant Quantum Computing
+- [[https://www.etis.ee/Portal/Projects/Display/a02ff990-eeb1-4761-af2f-59a1bda06b82][ETIS data sheet]]
+
+*** EQA
+- European Quantum Academy: \\
+  We are the tiny foothold of the European Quantum Academy *in¹* Estonia. \\
+  @@html:<small>@@ /¹) Meaning we are actually physically (pun) located in Estonia, not merely registered here./ @@html:</small>@@
+- [[https://qt.eu/news/2026/2026-05-06_The_Quantum_Academy_launches_to_train_Europes_next-generation_of_talent][Press release on QT.eu]]
+- ETIS Link will follow soon, I guess.
 
 * Teaching
 *** LTAT.04.021 Introduction to Quantum Information ("IQI")
